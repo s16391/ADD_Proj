@@ -3,7 +3,9 @@ import org.apache.spark.sql.SparkSession
 object Main {
 
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().appName("SimpleApplication").getOrCreate()
+    val spark = SparkSession.builder()
+      .appName("SimpleApplication")
+      .getOrCreate()
 
     val wigDataFrame = spark.read
       .format("csv")
